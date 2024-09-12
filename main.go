@@ -1,7 +1,9 @@
 package main
 
 import (
-	"github.com/walRey98/godesde0/mapas"
+	"fmt"
+
+	"github.com/walRey98/godesde0/gorutines"
 )
 
 func main() {
@@ -47,5 +49,22 @@ func main() {
 
 	//arreglos_slices.Capacidad()
 
-	mapas.MostrarMapas()
+	//mapas.MostrarMapas()
+
+	/*Pedro := new(modelos.Hombre)  // e "github.com/walRey98/godesde0/ejer_interfaces" "github.com/walRey98/godesde0/modelos"
+
+	e.HumanosRespirando(Pedro)
+
+	Maria := new(modelos.Mujer)
+	e.HumanosRespirando(Maria)*/
+
+	//defer_panic.EjemploPanic()
+
+	canal1 := make(chan bool)
+	go gorutines.MiNombreLentooo("Walter Reyes", canal1)
+	defer func() {
+		<-canal1
+	}()
+	fmt.Println("Estoy aqui")
+
 }
